@@ -1,10 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Route } from 'react-router-dom';
+import HomePage from './components/pages/HomePage';
+import LoginPage from './components/pages/LoginPage';
 
-const Welcome = styled.h1`
-    font-size: 150px;
-`;
-
-const App = () =>  <Welcome>hello</Welcome>
+const App = () =>  <div>
+    <Route path="/" exact component={HomePage} />
+    <Route path="/Login" exact component={LoginPage} />
+</div>
 
 export default App;
