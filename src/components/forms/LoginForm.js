@@ -3,7 +3,12 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import { Form, Button } from 'semantic-ui-react';
 import Validator from 'validator';
+import styled from 'styled-components';
 import InlineError from '../messages/InlineError';
+
+const FormStyle = {
+    marginTop: "10px"
+}
 
 export default class LoginForm extends React.Component {
     state={
@@ -41,7 +46,7 @@ export default class LoginForm extends React.Component {
     render () {
         const { data, errors } = this.state;
         return (
-            <Form onSubmit={this.onSubmit}>
+            <Form style={FormStyle} onSubmit={this.onSubmit}>
                 <Form.Field error={!!errors.email}>
                     <label htmlFor="email">Email</label>
                     <input 
